@@ -52,4 +52,5 @@ Execute `yarn start` to run the web app at `http://localhost:3000/`.
 ### Character details
 ![Sign Up](https://github.com/Skdiy/instaclone/blob/master/captures/signup.JPG)
 
-
+## Comments
+The two contributtors are me with different accounts.
