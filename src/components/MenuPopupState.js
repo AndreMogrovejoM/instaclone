@@ -16,7 +16,7 @@ const MenuPopupState = (props) => {
   const popupState = usePopupState({ variant: 'popover', popupId: 'demoMenu' })
   return (
     <div>
-      <MoreVertIcon variant="contained" {...bindTrigger(popupState)}  aria-controls="fade-menu" aria-haspopup="true" />
+      {/* <MoreVertIcon variant="contained" {...bindTrigger(popupState)}  aria-controls="fade-menu" aria-haspopup="true" /> */}
       <Menu {...bindMenu(popupState)}>
         <MenuItem onClick={popupState.close}>
           <span onClick={props.functiontopass.bind(this, props.datatopass)}>{props.labeltopass}</span>
