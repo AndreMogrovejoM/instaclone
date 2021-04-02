@@ -1,6 +1,3 @@
-"site": "instaclone-skdiy",
-firebase deploy --only hosting:instaclone-skdiy
-
 dependencies: 
 yarn add  react-scripts
 yarn add  firebase
@@ -11,6 +8,8 @@ yarn add  @material-ui/icons
 yarn add  material-ui-popup-state
 yarn add  react-expanding-textarea
 yarn add  react-instagram-embed (optional)
+
+
 yarn add  react-lazyload
 yarn add  react-linkify
 yarn add  get-user-locale
