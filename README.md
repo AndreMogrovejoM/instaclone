@@ -14,10 +14,9 @@ You need the next dependencies:
 * [npm](https://www.npmjs.com/)
 * [git](https://git-scm.com/)
 * [Semantic-UI-React](https://react.semantic-ui.com/)
-* [firebase]
-* [firebase-tools]
-* [react-instagram-embed]
-* [@material-ui/core]
+* [firebase](https://firebase.google.com/)
+* [firebase-tools](https://firebase.google.com/)
+* [@material-ui/core](https://material-ui.com)
 
 ### Setup the project
 
@@ -47,7 +46,7 @@ Execute `yarn start` to run the web app at `http://localhost:3000/`.
 ### Logged Screen
 ![Logged Screen](https://github.com/Skdiy/instaclone/blob/master/captures/logincapture.JPG)
 ### Testing
-![Testing](https://github.com/Skdiy/instaclone/blob/master/captures/error.JPG)
+![Testing](https://github.com/Skdiy/instaclone/blob/master/captures/testing2.JPG)
 ### List of Characters
 ![Sign In](https://github.com/Skdiy/instaclone/blob/master/captures/signin.JPG)
 ### Character details
