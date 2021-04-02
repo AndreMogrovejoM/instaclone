@@ -1,6 +1,6 @@
 import * as React from 'react'
 import "./components-styles/Post.css"
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import {
@@ -9,14 +9,15 @@ import {
   bindMenu,
 } from 'material-ui-popup-state/hooks'
 
-
-
+const moreStyle = {
+  color: '#aaa',
+}
 
 const MenuPopupState = (props) => {
   const popupState = usePopupState({ variant: 'popover', popupId: 'demoMenu' })
   return (
     <div>
-      {/* <MoreVertIcon variant="contained" {...bindTrigger(popupState)}  aria-controls="fade-menu" aria-haspopup="true" /> */}
+      { <MoreHorizIcon style={moreStyle} variant="contained" {...bindTrigger(popupState)}  aria-controls="fade-menu" aria-haspopup="true" /> }
       <Menu {...bindMenu(popupState)}>
         <MenuItem onClick={popupState.close}>
           <span onClick={props.functiontopass.bind(this, props.datatopass)}>{props.labeltopass}</span>

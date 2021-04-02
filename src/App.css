@@ -13,6 +13,18 @@
   border-bottom: 1px solid lightgray;
   padding: 20px;
   object-fit: contain;
+  display: flex;
+  justify-content:  space-between;
+}
+
+.app__posts {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+
+}
+.app__postsRight{
+  margin-left: 20px;
 }
 
 .app__headerImage {
@@ -20,9 +32,23 @@
   width: auto; 
   max-width: 100px; 
   max-height: 100px;
+  object-fit: contain;
+  cursor: pointer;
 }
 
 .app__signUp {
   display: flex;
   flex-direction: column;
+}
+
+.app__logintext {
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 60%;
 }

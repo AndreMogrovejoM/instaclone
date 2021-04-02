@@ -2,10 +2,20 @@ import './App.css';
 import React, {useState, useEffect} from 'react';
 import{ db, auth } from './backend/firebase';
 import Post from './components/Post';
+import PostThumb from './components/PostThumb';
 import ImageUpload from './components/ImageUpload';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button, Input } from '@material-ui/core';
+import InstagramEmbed from 'react-instagram-embed';
+import LazyLoad from "react-lazyload";
+import MenuPopupState from "./components/MenuPopupState"
+
+
+function backToTop(){
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 
 function getModalStyle() {
   const top = 50;
@@ -30,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Spinner = () => (
-  <div className="post loading">
+  <div className="post__loading">
     <img alt="Loading..." src="https://i.gifer.com/ZZ5H.gif" width="20" />
     <h5>Loading...</h5>
   </div>
@@ -39,6 +49,7 @@ const Spinner = () => (
 function App() {
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
+
   const [posts, setPosts] = useState([]);
   const [open, setOpen] = useState(false);
   const [openSignIn, setOpenSignIn] = useState(false);
@@ -48,8 +59,8 @@ function App() {
   const [email, setEmail] = useState('');
   const [user, setUser] = useState(null);
 
-  // useEffect runs a a piece of code based on a specific condition
 
+  // useEffect runs a a piece of code based on a specific condition
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
@@ -64,7 +75,6 @@ function App() {
             displayName: username,
           });
         }
-
       } else {
         // user has logged out...
         setUser(null);
@@ -106,20 +116,15 @@ function App() {
     auth
     .signInWithEmailAndPassword(email, password)
     .catch((error) => alert(error.message));
-
+    //close modal
     setOpenSignIn(false);
   }
+
 
   return (
     
     <div className="App">
-      
-      {user?.displayName ? (
-        <ImageUpload username={user.displayName}/>
-      ) : (
-        <h3> Login to upload...</h3>
-      )}
-      
+
       <Modal
         open={open}
         onClose={() => setOpen(false)}
@@ -177,7 +182,7 @@ function App() {
             />
             <Input 
               placeholder="password"
-              type="text"
+              type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -186,37 +191,70 @@ function App() {
         </div>
       </Modal>
 
-      <div className="app__header">
+      {/* Header */}
+      <header className="app__header">
         <img
           className="app__headerImage"
           src="/../images/instagram-header.svg"
           alt=""
+          onClick= {backToTop()}
         />
-      </div>
+        <div className="app__loginContainer">
+          { //Check if is logged in
+            user? (
+              <Button onClick={() => auth.signOut()}> Logout </Button>
+            ) : (
+              <div className="app__loginLeft"> 
+                <Button onClick={() => setOpenSignIn(true)}> Sing In </Button>
+                <Button onClick={() => setOpen(true)}> Sing Up </Button>
+              </div>
+            )
+          }
+          <div>
 
-      { //Check if is logged in
-        user? (
-          <Button onClick={() => auth.signOut()}> Logout </Button>
-        ) : (
-          <div className="app__loginContainer"> 
-            <Button onClick={() => setOpenSignIn(true)}> Sing In </Button>
-            <Button onClick={() => setOpen(true)}> Sing Up </Button>
           </div>
-        )
-      }
-      
-      {user?.username ? (
-        <h1>Este {user.username} está probando</h1>
-      ): (
-        <h3> </h3>
-      )}
-      {
-        posts.map(({id, post}) => (
-          <Post key={id} username={post.username}
-           caption={post.caption}
-           imgUrl={post.imgUrl}/>
-        ))
-      }
+
+        </div>
+       
+      </header>
+      {/* end header */}
+
+      <div className="app__posts">
+        <div className="app__postsLeft">
+          {
+            posts.map(({id, post}) => (
+              <Post key={id}
+              postId = {id}
+              user = {user}
+              username={post.username}
+              caption={post.caption}
+              imgUrl={post.imgUrl}/>
+            ))
+          }
+
+        </div>
+          <div className="app__postsRight">
+              <InstagramEmbed
+                className="floating"
+                url="https://www.instagram.com/p/CNIUkMNsSBE/?utm_source=ig_web_copy_link"
+                maxWidth={320}
+                hideCaption={false}
+                containerTagName="div"
+                protocol=""
+                injectScript
+                onLoading={() => {}}
+                onSuccess={() => {}}
+                onAfterRender={() => {}}
+                onFailure={() => {}}
+              />
+        </div>
+      </div>     
+
+      {user?.displayName ? (
+              <ImageUpload username={user.displayName}/>
+            ) : (
+              <h3 className="app__logintext"><center>Login to upload...</center></h3>
+            )}
     </div>
   );
 }
