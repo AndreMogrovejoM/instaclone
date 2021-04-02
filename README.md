@@ -1,6 +1,6 @@
-# IntaClone - André Mogrovejo
+# InstaClone - André Mogrovejo
 
-IntaClone - André Mogrovejo
+InstaClone - André Mogrovejo
 
 ## Description
 
