@@ -79,24 +79,6 @@
     border-bottom: 1px solid lightgray;
 }
 
-.post__thumbs{
-    width: 100%;
-    max-width: 1000px;
-}
-
-.post__thumb{
-    width: 100%;
-    cursor: pointer;
-    width: 100%; /* width of container */
-    height: 180px;; /* height of container */
-    overflow: hidden;
-    padding: 0px;
-}
-
-.post__thumb img {
-    margin: 0px 0px 0px 0px;
-    padding: 0px;
-}
 
 .comment_container{
     display: flex;
