@@ -9,7 +9,7 @@ import MenuPopupState from "../MenuPopupState/";
 
 import Linkify from 'react-linkify';
 
-function Post({lang, postId, username, user, caption, imgUrl, imagename, viewwhichuser}) {
+function Post({postId, username, user, caption, imgUrl, imagename, viewwhichuser}) {
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState([]);
 
@@ -128,10 +128,9 @@ function Post({lang, postId, username, user, caption, imgUrl, imagename, viewwhi
                     <div className="delete__Post">
                     {/* This is where the 3 dots menu appear to delete POSTS */}
                         <MenuPopupState 
-                            lang={lang}
                             datatopass={postId}
                             functiontopass={deletePost}
-                            labeltopass={lang ? "Effacer cette publication":"Delete this post"}
+                            labeltopass={"Delete this post"}
                         />
                     </div>
 
@@ -193,10 +192,9 @@ function Post({lang, postId, username, user, caption, imgUrl, imagename, viewwhi
                                     
                                     {/* This is where the 3 dots menu appear to delete comments */}
                                     <MenuPopupState 
-                                        lang={lang}
                                         datatopass={comment.timestamp}
                                         functiontopass={deleteComment}
-                                        labeltopass={lang ? "Effacez ce commentaire":"Delete this comment"}
+                                        labeltopass={"Delete this comment"}
                                     />
                                 </div>
                             } 
@@ -213,7 +211,7 @@ function Post({lang, postId, username, user, caption, imgUrl, imagename, viewwhi
                         <Input
                             className="post__input"
                             type="text"
-                            placeholder={lang ? "Ajoutez un commentaire":"Add a comment"}
+                            placeholder={"Add a comment..."}
                             value={comment}
                             onChange={(e) => setComment(e.target.value)}
                         />
@@ -224,7 +222,7 @@ function Post({lang, postId, username, user, caption, imgUrl, imagename, viewwhi
                             type="submit"
                             onClick={postComment}
                         >
-                            {lang ? "Publier":"Post"}
+                            {"Post"}
                         </Button>
                     </form>
                 )}

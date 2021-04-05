@@ -1,12 +1,14 @@
 import * as React from 'react';
 //import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import Profile from '../../conteiners/Profile/'
 import './Header.css'
 
-function backToTop(){
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  }
+//back to top function
+const scrollTop = () =>{
+    window.scrollTo({top: 0, behavior: 'smooth'});
+ };
 
 export default class Header extends React.Component {
     render(){
@@ -16,12 +18,14 @@ export default class Header extends React.Component {
             className="app__headerImage"
             src="/../images/instagram-header.svg"
             alt=""
-            onClick= {backToTop()}
+            onClick= {scrollTop}
             />
             <div className="app__loginContainer">
             { //Check if is logged in
                 this.props.user? (
+
                 <Button onClick={() => this.props.auth.signOut()}> Logout </Button>
+
                 ) : (
                 <div className="app__loginLeft"> 
                     <Button onClick={() => this.props.setOpenSignIn(true)}> Sing In </Button>

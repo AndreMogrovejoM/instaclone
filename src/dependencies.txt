@@ -8,7 +8,7 @@ yarn add  @material-ui/icons
 yarn add  material-ui-popup-state
 yarn add  react-expanding-textarea
 yarn add  react-instagram-embed (optional)
-
+yarn add  react-router-dom
 
 yarn add  react-lazyload
 yarn add  react-linkify
