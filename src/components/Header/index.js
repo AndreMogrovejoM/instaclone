@@ -1,7 +1,7 @@
 import * as React from 'react';
 //import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
-import './components-styles/Header.css'
+import './Header.css'
 
 function backToTop(){
     document.body.scrollTop = 0; // For Safari

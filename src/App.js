@@ -1,12 +1,12 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import{ db, auth } from './backend/firebase';
-import Post from './components/Post';
-import PostRight from './components/PostRight';
-import Header from './components/Header';
-import SignIn from './components/SignIn';
-import SignUp from './components/SignUp';
-import ImageUpload from './components/ImageUpload';
+import Post from './components/Post/';
+import PostRight from './components/PostRight/';
+import Header from './components/Header/';
+import SignIn from './components/SignIn/';
+import SignUp from './components/SignUp/';
+import ImageUpload from './components/ImageUpload/';
 import { getModalStyle, useStyles } from './components/ModalStyles.js'
 /* 
 import LazyLoad from "react-lazyload";

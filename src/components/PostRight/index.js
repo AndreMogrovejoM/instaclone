@@ -1,6 +1,6 @@
 import * as React from 'react';
 import InstagramEmbed from 'react-instagram-embed';
-import './components-styles/SignUp.css'
+import './PostRight.css'
 
 export default class PostRight extends React.Component {
     render(){

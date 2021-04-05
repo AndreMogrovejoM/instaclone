@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Modal from '@material-ui/core/Modal';
 import { Button, Input } from '@material-ui/core';
-import './components-styles/SignIn.css'
+import './SignIn.css'
 
 export default class SignIn extends React.Component {
     render(){

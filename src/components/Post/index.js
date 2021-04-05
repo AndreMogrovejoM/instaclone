@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './components-styles/Post.css';
+import './Post.css';
 import Avatar from "@material-ui/core/Avatar";
-import { db, auth } from '../backend/firebase';
+import { db, auth } from '../../backend/firebase';
 import firebase from 'firebase';
 import { Button, Input } from '@material-ui/core';
 
-import MenuPopupState from "./MenuPopupState";
+import MenuPopupState from "../MenuPopupState/";
 
 import Linkify from 'react-linkify';
 

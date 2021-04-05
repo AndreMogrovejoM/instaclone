@@ -1,5 +1,4 @@
 import * as React from 'react'
-import "./components-styles/Post.css"
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'

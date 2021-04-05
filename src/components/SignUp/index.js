@@ -1,10 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Modal from '@material-ui/core/Modal';
 import { Button, Input } from '@material-ui/core';
-import './components-styles/SignUp.css'
-
-import { makeStyles } from '@material-ui/core/styles';
-
+import './SignUp.css'
 
 export default class SignUp extends React.Component {
     render(){
