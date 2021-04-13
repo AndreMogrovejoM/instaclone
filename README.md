@@ -26,7 +26,7 @@ You need the next dependencies:
 
 Clone this repository
 ``` bash
-git clone https://github.com/Skdiy/Ravn-Challenge-V2-Andre-Mogrovejo.git
+git clone https://github.com/Skdiy/instaclone.git
 ```
 
 Install npm
