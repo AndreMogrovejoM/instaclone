@@ -1,4 +1,4 @@
-# InstaClone - André Mogrovejo (STILL WORKING ON PROYECT)
+# InstaClone - André Mogrovejo
 
 InstaClone - André Mogrovejo
 
